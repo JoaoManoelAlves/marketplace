@@ -9,10 +9,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addToCart = (product: CartItems) => {
     setItems((prevState) => {
       const exist = prevState.find((item) => item.id === product.id);
+      
       {
         /*Produto já existe no carrinho ou não */
       }
       if (exist) {
+        
         return prevState.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
